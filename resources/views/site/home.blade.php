@@ -6,7 +6,7 @@
 @section('content')
     <x-hero title="КОТОЛОГ" />
 
-    <main class="mt-6 pb-24">
+    <main class="p-[24px] bg-brand-blue rounded-t-[24px]">
         <x-toolbox sort="all" />
 
         <div class="mt-6">

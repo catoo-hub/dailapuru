@@ -38,7 +38,7 @@
             </div>
         @endif
     </div>
-    <div class="mt-2 text-center font-display {{ $labelClasses }} text-brand-white">
+    <div class="mt-2 text-center text-base {{ $labelClasses }} text-brand-white">
         {{ $name }}
     </div>
 </a>

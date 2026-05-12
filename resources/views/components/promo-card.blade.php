@@ -18,7 +18,7 @@
         @endif
     </div>
     @if ($period)
-        <div class="mt-4 text-base text-brand-black/80">{{ $period }}</div>
+        <div class="mt-4 text-base text-brand-white/80">{{ $period }}</div>
     @endif
-    <h3 class="mt-2 font-display text-2xl leading-tight text-brand-black">{{ $title }}</h3>
+    <h3 class="mt-2 text-[32px] line-clamp-2 font-bold leading-tight text-brand-white">{{ $title }}</h3>
 </a>
