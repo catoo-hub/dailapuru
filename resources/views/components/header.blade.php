@@ -1,0 +1,55 @@
+@props([
+    'active' => 'catalog',
+    'items' => [
+        'catalog'    => ['label' => 'Каталог',  'url' => '/catalog'],
+        'about'      => ['label' => 'О нас',    'url' => '/about'],
+        'contacts'   => ['label' => 'Контакты', 'url' => '/contacts'],
+        'articles'   => ['label' => 'Статьи',   'url' => '/articles'],
+        'promotions' => ['label' => 'Акции',    'url' => '/promotions'],
+        'reviews'    => ['label' => 'Отзывы',   'url' => '/reviews'],
+    ],
+])
+
+<header class="flex h-[90px] items-center justify-between pt-2">
+    <a href="/" class="flex items-center gap-2" aria-label="Дай Лапу">
+        <span class="grid h-[72px] w-[72px] place-items-center rounded-full bg-brand-pink text-3xl">
+            🐾
+        </span>
+        <span class="font-display text-2xl leading-none text-brand-white">Дай Лапу</span>
+    </a>
+
+    <nav class="flex items-center gap-2">
+        <ul class="flex items-center gap-1">
+            @foreach ($items as $key => $item)
+                <li>
+                    <a href="{{ $item['url'] }}"
+                       class="inline-flex h-[41px] items-center rounded-chip px-4 text-base font-medium transition
+                              {{ $active === $key
+                                    ? 'bg-brand-pink text-brand-white'
+                                    : 'text-brand-white/95 hover:bg-brand-blue-dark' }}">
+                        {{ $item['label'] }}
+                    </a>
+                </li>
+            @endforeach
+        </ul>
+
+        <a href="/cart"
+           class="ml-4 inline-flex h-[50px] w-[50px] items-center justify-center text-brand-white"
+           aria-label="Корзина">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/>
+            </svg>
+        </a>
+
+        <a href="/account"
+           class="inline-flex h-[50px] w-[50px] items-center justify-center rounded-full bg-brand-white text-brand-blue"
+           aria-label="Личный кабинет">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+        </a>
+    </nav>
+</header>
