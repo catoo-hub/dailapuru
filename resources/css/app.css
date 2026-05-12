@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -6,26 +6,27 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Inter', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --font-display: 'Bowlby One', 'Inter', system-ui, sans-serif;
+  --font-sans:
+    "Nunito", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-display: "Climate Crisis", "Nunito", system-ui, sans-serif;
 
-    --color-brand-blue: #00a8ff;
-    --color-brand-blue-dark: #0087e7;
-    --color-brand-pink: #f292bb;
-    --color-brand-pink-dark: #e87aab;
-    --color-brand-white: #ffffff;
-    --color-brand-black: #000000;
+  --color-brand-blue: #00a8ff;
+  --color-brand-blue-dark: #0087e7;
+  --color-brand-pink: #f292bb;
+  --color-brand-pink-dark: #e87aab;
+  --color-brand-white: #ffffff;
+  --color-brand-black: #000000;
 
-    --radius-card: 24px;
-    --radius-chip: 999px;
+  --radius-card: 24px;
+  --radius-chip: 999px;
 }
 
 @layer base {
-    html,
-    body {
-        background-color: var(--color-brand-blue);
-        color: var(--color-brand-black);
-        font-family: var(--font-sans);
-    }
+  html,
+  body {
+    background-color: var(--color-brand-blue-dark);
+    color: var(--color-brand-black);
+    font-family: var(--font-sans);
+  }
 }

@@ -14,12 +14,12 @@
 
 <div class="flex h-[41px] items-center justify-between">
     {{-- Sort tabs --}}
-    <div class="flex items-center gap-0">
+    <div class="flex items-center gap-0 border-2 rounded-chip border-white">
         @foreach ($sorts as $key => $label)
             <a href="?sort={{ $key }}"
                class="inline-flex h-[41px] items-center rounded-chip px-4 text-base font-medium transition
                       {{ $sort === $key
-                            ? 'bg-brand-pink text-brand-white'
+                            ? 'bg-brand-white text-brand-black'
                             : 'text-brand-white hover:bg-brand-blue-dark' }}">
                 {{ $label }}
             </a>
