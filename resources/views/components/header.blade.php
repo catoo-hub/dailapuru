@@ -40,13 +40,37 @@
             </svg>
         </a>
 
-        <a href="/account"
-        class="inline-flex h-[50px] w-[50px] items-center justify-center rounded-full bg-brand-white text-brand-blue"
-        aria-label="Личный кабинет">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-            </svg>
-        </a>
+        <div class="flex items-center gap-2">
+            @auth
+                @if (auth()->user()->isAdmin())
+                    <a href="{{ route('admin.dashboard') }}"
+                       class="inline-flex h-[41px] items-center rounded-chip bg-white/20 px-4 text-sm font-bold text-brand-white transition hover:bg-white/30">
+                        Админка
+                    </a>
+                @endif
+
+                <a href="{{ route('account.dashboard') }}"
+                   class="inline-flex h-[50px] w-[50px] items-center justify-center rounded-full bg-brand-white text-brand-blue"
+                   aria-label="Личный кабинет">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </a>
+
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit"
+                            class="inline-flex h-[41px] items-center rounded-chip bg-brand-pink px-4 text-sm font-bold text-white transition hover:bg-brand-pink-dark">
+                        Выйти
+                    </button>
+                </form>
+            @else
+                <a href="{{ route('login') }}"
+                   class="inline-flex h-[41px] items-center rounded-chip bg-brand-white px-4 text-sm font-bold text-brand-blue transition hover:bg-white/90">
+                    Войти
+                </a>
+            @endauth
+        </div>
     </nav>
 </header>
