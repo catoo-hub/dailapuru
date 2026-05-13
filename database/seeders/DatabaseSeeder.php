@@ -17,16 +17,6 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        $testUser = User::factory()->make([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
-
-        User::query()->updateOrCreate(
-            ['email' => 'test@example.com'],
-            $testUser->toArray(),
-        );
-
         $this->call([
             AdminUserSeeder::class,
             SettingSeeder::class,

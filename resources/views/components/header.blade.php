@@ -40,7 +40,7 @@
             </svg>
         </a>
 
-        <div class="flex items-center gap-2">
+        <!-- <div class="flex items-center gap-2">
             @auth
                 @if (auth()->user()->isAdmin())
                     <a href="{{ route('admin.dashboard') }}"
@@ -71,6 +71,6 @@
                     Войти
                 </a>
             @endauth
-        </div>
+        </div> -->
     </nav>
 </header>
